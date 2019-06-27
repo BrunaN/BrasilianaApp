@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, StatusBar, Text, View, TouchableOpacity, Image } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
@@ -131,6 +131,10 @@ class Result extends Component {
         return (
             this.state.isDraw ?
                 <View style={styles.container}>
+                    <StatusBar
+                        barStyle="light-content"
+                        backgroundColor="#E23A33"
+                    />
                     <Text style={styles.textResult}>
                         Houve um empate!
                     </Text>
@@ -154,6 +158,10 @@ class Result extends Component {
                 </View>
                 :
                 <View style={styles.container}>
+                    <StatusBar
+                        barStyle="light-content"
+                        backgroundColor="#E23A33"
+                    />
                     <Text style={styles.textResult}>
                         Resultado do julgamento foi que o(a)
                     </Text>

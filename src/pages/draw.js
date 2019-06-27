@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
@@ -62,6 +62,10 @@ class Draw extends Component {
 
     renderItem = ({ item }) => (
         <View style={styles.containerItem}>
+            <StatusBar
+                barStyle="light-content"
+                backgroundColor="#48B091"
+            />
             <TouchableOpacity
                 onPress={() => {
                     this.props.navigation.navigate('SucessVoting', { id: item.id })
@@ -100,7 +104,7 @@ class Draw extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.textSelect}>
-                Houve um empate. ACUSEM O CORRUPTO!!
+                    Houve um empate. ACUSEM O CORRUPTO!!
                     {this.props.players.playersP}
                     {this.props.players.professorVotes}
                     {this.props.players.advogadoVotes}
@@ -155,7 +159,7 @@ const styles = StyleSheet.create({
     itemText: {
         color: '#272A2D',
         padding: 10,
-        fontSize: 20,
+        fontSize: 19,
         fontWeight: 'bold',
         textAlign: 'left'
     },
