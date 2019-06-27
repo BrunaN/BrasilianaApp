@@ -31,7 +31,6 @@ class Result extends Component {
         for (let key in this.props.players) {
             if (key != 'playersTotal' && key != 'playersP') {
                 if (votes != 0 && this.props.players[key] == votes) {
-                    console.log(key)
                     switch (key) {
                         case 'professorVotes':
                             aux.push(1)
@@ -49,7 +48,6 @@ class Result extends Component {
                             aux.push(5)
                             break;
                     }
-                    console.log(aux)
                     if (aux.length > 1) {
                         this.setState({
                             draw: aux,
@@ -140,16 +138,14 @@ class Result extends Component {
                     </Text>
                     <Text style={styles.textResult}>
                         Chegou a hora de ver os mais votados!
-                        {this.state.draw.length}
                     </Text>
                     <View style={styles.buttonView}>
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('Draw', { characters: this.state.draw });
-                                this.props.clean();
                                 this.props.faultVotes(this.props.players.playersTotal);
-                            }
-                            }
+                                this.props.clean();
+                            }}
                             color="transparent"
                             style={styles.button}>
                             <Text style={styles.text}>DESEMPATAR</Text>

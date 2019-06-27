@@ -46,6 +46,11 @@ export function clean(){
         type: 'CLEAN'
     }
 }
+export function cleanPlayersTotal(){
+    return{
+        type: 'CLEAN_TOTAL'
+    }
+}
 export function faultVotes(l){
     return{
         type: 'FAULT',

@@ -87,8 +87,7 @@ class Draw extends Component {
                             this.props.medicoVotes();
                             break;
                     }
-                }
-                }>
+                }}>
                 <Image
                     style={styles.itemImage}
                     source={item.image}
@@ -104,13 +103,7 @@ class Draw extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.textSelect}>
-                    Houve um empate. ACUSEM O CORRUPTO!!
-                    {this.props.players.playersP}
-                    {this.props.players.professorVotes}
-                    {this.props.players.advogadoVotes}
-                    {this.props.players.medicoVotes}
-                    {this.props.players.prefeitoVotes}
-                    {this.props.players.empresarioVotes}
+                    Decidam quem deve ser o eliminado. ACUSEM O CORRUPTO!!
                 </Text>
                 <FlatList
                     numColumns={2}

@@ -25,12 +25,16 @@ export default function players(state = {
         case 'CLEAN':
             return {
                 ...state,
-                playersTotal: 0,
                 advogadoVotes: 0,
                 medicoVotes: 0,
                 empresarioVotes: 0,
                 professorVotes: 0,
                 prefeitoVotes: 0
+            };
+        case 'CLEAN_TOTAL':
+            return {
+                ...state,
+                playersTotal: 0
             }
         case 'FAULT':
             return {

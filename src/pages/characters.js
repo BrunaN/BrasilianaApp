@@ -17,6 +17,7 @@ class Characters extends Component {
 
     componentDidMount() {
         this.props.clean();
+        this.props.cleanPlayersTotal();
     }
 
     state = {
@@ -77,8 +78,7 @@ class Characters extends Component {
                     x.push(item.id)
                     this.props.counterPlayers();
                     this.setState({ characters: x })
-                }
-                }>
+                }}>
                 <Image
                     style={styles.itemImage}
                     source={item.image}
@@ -110,9 +110,7 @@ class Characters extends Component {
                         onPress={() => {
                             navigate('Voting', { characters: this.state.characters })
                             this.props.faultVotes(this.state.characters.length);
-                            console.log(this.props)
-                        }
-                        }
+                        }}
                         color="transparent"
                         style={styles.button}>
                         <Text style={styles.text}>COMFIRMAR</Text>
