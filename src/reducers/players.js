@@ -28,7 +28,7 @@ export default function players(state = {
         case 'FAULT':
             return {
                 ...state,
-                playersP: action.length,
+                playersP: action.l,
             }
         case 'ADVOGADO_VOTES':
             return {

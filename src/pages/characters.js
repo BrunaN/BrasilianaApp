@@ -105,8 +105,8 @@ class Characters extends Component {
                     <TouchableOpacity
                         onPress={() => {
                             navigate('Voting', { characters: this.state.characters })
-                            this.props.counterPlayers(this.state.characters.length);
                             this.props.faultVotes(this.state.characters.length);
+                            this.props.counterPlayers(this.props.players.playersP);
                             console.log(this.props)
                         }
                         }
