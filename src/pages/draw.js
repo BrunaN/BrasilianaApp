@@ -105,6 +105,9 @@ class Draw extends Component {
                 <Text style={styles.textSelect}>
                     Decidam quem deve ser o eliminado. ACUSEM O CORRUPTO!!
                 </Text>
+                <Text style={styles.textSelect}>
+                    ACUSEM O CORRUPTO!!
+                </Text>
                 <FlatList
                     numColumns={2}
                     columnWrapperStyle={styles.list}

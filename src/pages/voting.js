@@ -101,7 +101,6 @@ class Voting extends Component {
             <View style={styles.container}>
                 <Text style={styles.textSelect}>
                     Acuse o corrupto!
-                    {this.props.players.playersTotal}
                 </Text>
                 <FlatList
                     numColumns={2}
