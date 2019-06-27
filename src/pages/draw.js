@@ -16,6 +16,8 @@ class Draw extends Component {
     };
 
     componentDidMount() {
+        this.props.counterPlayers(this.props.players.playersP);
+        console.log(this.props);
         let x = [];
         for (let i = 0; i < this.props.navigation.state.params.characters.length; i++) {
             for (let j = 0; j < this.state.characters.length; j++) {
@@ -101,7 +103,7 @@ class Draw extends Component {
             <View style={styles.container}>
                 <Text style={styles.textSelect}>
                 Houve um empate. ACUSEM O CORRUPTO!!
-                    {this.props.players.playersTotal}
+                    {this.props.players.playersP}
                     {this.props.players.professorVotes}
                     {this.props.players.advogadoVotes}
                     {this.props.players.medicoVotes}

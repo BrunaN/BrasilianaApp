@@ -9,6 +9,7 @@ export default function players(state = {
         case 'COUNTER_PLAYERS':
             return {
                 playersTotal: action.length,
+                playersP: action.length,
                 ...state,
             };
         case 'DECREMENT':

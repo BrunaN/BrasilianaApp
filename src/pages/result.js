@@ -19,31 +19,37 @@ class Result extends Component {
         let player;
         let aux = this.state.draw;
         for (let key in this.props.players) {
-            //console.log(Math.max(this.props.players[key]))
-            if (this.props.players[key] > votes) {
-                votes = this.props.players[key];
-                player = key;
-            }
-            if (key != 'playersTotal' && this.props.players[key] == votes) {
-                switch (key) {
-                    case 'professorVotes':
-                        aux.push(1)
-                        break;
-                    case 'advogadoVotes':
-                        aux.push(2)
-                        break;
-                    case 'prefeitoVotes':
-                        aux.push(3)
-                        break;
-                    case 'empresarioVotes':
-                        aux.push(4)
-                        break;
-                    case 'medicoVotes':
-                        aux.push(5)
-                        break;
+            if(key != 'playersTotal' && key != 'playersP'){
+                if (this.props.players[key] > votes) {
+                    votes = this.props.players[key];
+                    player = key;
                 }
+                if (votes != 0 && this.props.players[key] >= votes){
+                    console.log(key)
+                    switch (key) {
+                        case 'professorVotes':
+                            aux.push(1)
+                            break;
+                        case 'advogadoVotes':
+                            aux.push(2)
+                            break;
+                        case 'prefeitoVotes':
+                            aux.push(3)
+                            break;
+                        case 'empresarioVotes':
+                            aux.push(4)
+                            break;
+                        case 'medicoVotes':
+                            aux.push(5)
+                            break;
+                    }
                 console.log(aux)
-            }
+                this.setState({
+                    draw: aux,
+                    isDraw: true
+                });
+                }
+            }  
         }
 
         if (aux.length == 0) {
@@ -108,28 +114,30 @@ class Result extends Component {
         ],
         playerEliminated: {},
         draw: [],
+        isDraw: false
     }
 
     render() {
         const { navigate } = this.props.navigation;
         return (
-            this.state.draw ?
+            this.state.isDraw ?
                 <View style={styles.container}>
                     <Text style={styles.textResult}>
-                        lerolero
+                        Houve um empate!
                     </Text>
                     <Text style={styles.textResult}>
-                        é acusado(a) de corrupção!
+                        Chegou a hora de ver os mais votados!
+                        {this.state.draw.length}
                     </Text>
                     <View style={styles.buttonView}>
                         <TouchableOpacity
                             onPress={() => {
-                                navigate('Main')
+                                navigate('Draw', { characters: this.state.draw })
                             }
                             }
                             color="transparent"
                             style={styles.button}>
-                            <Text style={styles.text}>FINALIZAR O JULGAMENTO</Text>
+                            <Text style={styles.text}>DESEMPATAR</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

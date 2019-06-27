@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
+import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
@@ -102,6 +102,7 @@ class Characters extends Component {
                         onPress={() => {
                             navigate('Voting', { characters: this.state.characters })
                             this.props.counterPlayers(this.state.characters.length);
+                            console.log(this.props)
                         }
                         }
                         color="transparent"
