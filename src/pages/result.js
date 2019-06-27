@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#E23A33',
     },
     textResult: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,
@@ -220,21 +220,26 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     item: {
-        width: 200,
+        width: 220,
         margin: 15,
         backgroundColor: '#FDFBE0',
-        borderRadius: 6
+        borderRadius: 6,
+        shadowColor: '#6B557C',
+        shadowOffset: { width: 230, height: 200 },
+        shadowRadius: 1,
+        elevation: 10,
+        shadowOpacity: 0.9,
     },
     itemText: {
         color: '#272A2D',
         padding: 10,
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'left'
     },
     itemImage: {
-        height: 150,
-        width: 200,
+        height: 180,
+        width: 220,
         borderTopLeftRadius: 6,
         borderTopRightRadius: 6,
     },
@@ -250,8 +255,8 @@ const styles = StyleSheet.create({
     },
     button: {
         textAlign: 'center',
-        margin: 15,
-        borderWidth: 1,
+        margin: 30,
+        borderWidth: 2,
         borderColor: '#FDFBE0',
         borderRadius: 2
     }

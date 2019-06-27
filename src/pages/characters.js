@@ -56,7 +56,7 @@ class Characters extends Component {
     }
 
     renderItem = ({ item }) => (
-        <View style={item.active? styles.containerItemActive : styles.containerItem}>
+        <View style={item.active ? styles.containerItemActive : styles.containerItem}>
             <TouchableOpacity
                 onPress={() => {
 
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     textSelect: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
         width: 150,
         textAlign: 'center',
         margin: 10,
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#FDFBE0',
         borderRadius: 2
     }

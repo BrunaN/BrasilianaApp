@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     textSelect: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { Alert, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 
 export default class Main extends Component {
     static navigationOptions = {
@@ -9,18 +9,22 @@ export default class Main extends Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>Chegou a hora do jugalmento!</Text>
-                <Text style={styles.text}>Descubra quem é o corrupto!</Text>
-                <View style={styles.buttonView}>
-                    <TouchableOpacity
-                        onPress={() => navigate('Characters')}
-                        color="transparent"
-                        style={styles.button}>
-                        <Text style={styles.text}>COMEÇAR</Text>
-                    </TouchableOpacity>
+            <ImageBackground source={require('../img/backgroundImage.png')} style={{ width: '100%', height: '100%' }}>
+                <View style={styles.container}>
+                    <Text style={styles.welcome}>Chegou a hora do jugalmento!</Text>
+                    <Text style={styles.text}>Descubra quem é o corrupto!</Text>
+                    <View style={styles.buttonView}>
+                        <TouchableOpacity
+                            onPress={() => navigate('Characters')}
+                            color="transparent"
+                            style={styles.button}>
+                            <Text style={styles.textButton}>COMEÇAR</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+
+            </ImageBackground>
+
         );
     }
 }
@@ -30,25 +34,30 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#48B091',
     },
     welcome: {
-        fontSize: 25,
+        fontSize: 28,
         fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,
         color: '#ffff',
     },
     text: {
-        fontSize: 20,
+        fontSize: 22,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#ffff',
+    },
+    textButton: {
+        fontSize: 22,
         fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,
         color: '#ffff',
     },
     button: {
-        margin: 20,
-        borderWidth: 1,
+        margin: 30,
+        borderWidth: 2,
         borderColor: '#FDFBE0',
         borderRadius: 2
     }

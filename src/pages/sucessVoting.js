@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'center',
-        margin: 10,
         color: '#ffff',
     },
     text: {
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     },
     button: {
         margin: 20,
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#FDFBE0',
         borderRadius: 2
     }
