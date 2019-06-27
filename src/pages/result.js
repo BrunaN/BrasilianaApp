@@ -17,45 +17,65 @@ class Result extends Component {
     componentDidMount() {
         let votes = 0;
         let player;
-        let aux = [];
+        let aux = this.state.draw;
         for (let key in this.props.players) {
             //console.log(Math.max(this.props.players[key]))
-            if(this.props.players[key] > votes){
+            if (this.props.players[key] > votes) {
                 votes = this.props.players[key];
                 player = key;
             }
-            if(key != 'playersTotal' && this.props.players[key] == votes){
-                aux.push(key);
+            if (key != 'playersTotal' && this.props.players[key] == votes) {
+                switch (key) {
+                    case 'professorVotes':
+                        aux.push(1)
+                        break;
+                    case 'advogadoVotes':
+                        aux.push(2)
+                        break;
+                    case 'prefeitoVotes':
+                        aux.push(3)
+                        break;
+                    case 'empresarioVotes':
+                        aux.push(4)
+                        break;
+                    case 'medicoVotes':
+                        aux.push(5)
+                        break;
+                }
                 console.log(aux)
             }
         }
-        switch (player) {
-            case 'professorVotes':
-                this.setState({
-                    playerEliminated: this.state.characters[0]
-                });
-                break;
-            case 'advogadoVotes':
-                this.setState({
-                    playerEliminated: this.state.characters[1]
-                });    
-                break;
-            case 'prefeitoVotes':
-                this.setState({
-                    playerEliminated: this.state.characters[3]
-                });
-                break;
-            case 'empresarioVotes':
-                this.setState({
-                    playerEliminated: this.state.characters[4]
-                });    
-                break;
-            case 'medicoVotes':
-                this.setState({
-                    playerEliminated: this.state.characters[5]
-                });
-                break;
+
+        if (aux.length == 0) {
+            switch (player) {
+                case 'professorVotes':
+                    this.setState({
+                        playerEliminated: this.state.characters[0]
+                    });
+                    break;
+                case 'advogadoVotes':
+                    this.setState({
+                        playerEliminated: this.state.characters[1]
+                    });
+                    break;
+                case 'prefeitoVotes':
+                    this.setState({
+                        playerEliminated: this.state.characters[3]
+                    });
+                    break;
+                case 'empresarioVotes':
+                    this.setState({
+                        playerEliminated: this.state.characters[4]
+                    });
+                    break;
+                case 'medicoVotes':
+                    this.setState({
+                        playerEliminated: this.state.characters[5]
+                    });
+                    break;
+            }
         }
+
     }
 
     state = {
@@ -93,34 +113,54 @@ class Result extends Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={styles.container}>
-                <Text style={styles.textResult}>
-                    Resultado do julgamento foi que o(a)
-                </Text>
-                <View style={styles.item}>
-                    <Image
-                        style={styles.itemImage}
-                        source={this.state.playerEliminated.image}
-                    />
-                    <Text style={styles.itemText}>
-                        {this.state.playerEliminated.name}
+            this.state.draw ?
+                <View style={styles.container}>
+                    <Text style={styles.textResult}>
+                        lerolero
                     </Text>
+                    <Text style={styles.textResult}>
+                        é acusado(a) de corrupção!
+                    </Text>
+                    <View style={styles.buttonView}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigate('Main')
+                            }
+                            }
+                            color="transparent"
+                            style={styles.button}>
+                            <Text style={styles.text}>FINALIZAR O JULGAMENTO</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <Text style={styles.textResult}>
-                    é acusado(a) de corrupção!
-                </Text>
-                <View style={styles.buttonView}>
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigate('Main')
-                        }
-                        }
-                        color="transparent"
-                        style={styles.button}>
-                        <Text style={styles.text}>FINALIZAR O JULGAMENTO</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+                :
+                <View style={styles.container}>
+                    <Text style={styles.textResult}>
+                        Resultado do julgamento foi que o(a)
+                    </Text>
+                    <View style={styles.item}>
+                        <Image
+                            style={styles.itemImage}
+                            source={this.state.playerEliminated.image}
+                        />
+                        <Text style={styles.itemText}>
+                            {this.state.playerEliminated.name}
+                        </Text>
+                    </View>
+                    <Text style={styles.textResult}>
+                        é acusado(a) de corrupção!
+                    </Text>
+                    <View style={styles.buttonView}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigate('Main')
+                            }}
+                            color="transparent"
+                            style={styles.button}>
+                            <Text style={styles.text}>FINALIZAR O JULGAMENTO</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View> 
         );
     }
 }

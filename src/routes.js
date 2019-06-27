@@ -5,13 +5,16 @@ import Characters from './pages/characters';
 import Voting from './pages/voting';
 import SucessVoting from './pages/sucessVoting';
 import Result from './pages/result';
+import Draw from './pages/draw';
+
 
 const MainNavigation = createStackNavigator({
     Main,
     Characters,
     Voting,
     SucessVoting,
-    Result
+    Result,
+    Draw
 });
 
 const App = createAppContainer(MainNavigation);
