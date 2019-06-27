@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     textSelect: {
-        fontSize: 22,
+        fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,
