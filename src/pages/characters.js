@@ -69,10 +69,12 @@ class Characters extends Component {
                         for (let i = 0; i < x.length; i++) {
                             if (x[i] == item.id) {
                                 x.splice(i, 1)
+                                this.props.decrementPlayers();
                             }
                         }
                     }
                     x.push(item.id)
+                    this.props.counterPlayers();
                     this.setState({ characters: x })
                 }
                 }>
@@ -106,7 +108,6 @@ class Characters extends Component {
                         onPress={() => {
                             navigate('Voting', { characters: this.state.characters })
                             this.props.faultVotes(this.state.characters.length);
-                            this.props.counterPlayers(this.props.players.playersP);
                             console.log(this.props)
                         }
                         }

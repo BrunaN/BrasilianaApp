@@ -1,7 +1,12 @@
-export function counterPlayers(length){
+export function counterPlayers(){
     return {
         type: 'COUNTER_PLAYERS',
-        length,
+    }
+}
+
+export function decrementPlayers(){
+    return {
+        type: 'DECREMENT_PLAYERS',
     }
 }
 
