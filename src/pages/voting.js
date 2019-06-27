@@ -38,7 +38,7 @@ class Voting extends Component {
             },
             {
                 "id": 2,
-                "name": "Advogado",
+                "name": "Advogada",
                 "image": require('../img/advogado.png')
             },
             {
@@ -53,7 +53,7 @@ class Voting extends Component {
             },
             {
                 "id": 5,
-                "name": "Médico",
+                "name": "Médica",
                 "image": require('../img/medico.png')
             }
         ],

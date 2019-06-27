@@ -25,7 +25,7 @@ class Characters extends Component {
             },
             {
                 "id": 2,
-                "name": "Advogado",
+                "name": "Advogada",
                 "image": require('../img/advogado.png'),
                 "active": false
             },
@@ -43,7 +43,7 @@ class Characters extends Component {
             },
             {
                 "id": 5,
-                "name": "Médico",
+                "name": "Médica",
                 "image": require('../img/medico.png'),
                 "active": false
             }

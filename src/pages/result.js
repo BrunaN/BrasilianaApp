@@ -17,67 +17,45 @@ class Result extends Component {
     componentDidMount() {
         let votes = 0;
         let player;
+        let aux = [];
         for (let key in this.props.players) {
-            console.log(key + " -> " + this.props.players[key]);
-            // console.log(Math.max(this.props.players[key]))
+            //console.log(Math.max(this.props.players[key]))
             if(this.props.players[key] > votes){
                 votes = this.props.players[key];
-                console.log(key)
-                player=key;
+                player = key;
+            }
+            if(key != 'playersTotal' && this.props.players[key] == votes){
+                aux.push(key);
+                console.log(aux)
             }
         }
-        switch (key) {
-            case professorVotes:
-                this.props.professorVotes();
+        switch (player) {
+            case 'professorVotes':
+                this.setState({
+                    playerEliminated: this.state.characters[0]
+                });
                 break;
-            case advogadoVotes:
-                this.props.advogadoVotes();
+            case 'advogadoVotes':
+                this.setState({
+                    playerEliminated: this.state.characters[1]
+                });    
                 break;
-            case prefeitoVotes:
-                this.props.prefeitoVotes();
+            case 'prefeitoVotes':
+                this.setState({
+                    playerEliminated: this.state.characters[3]
+                });
                 break;
-            case empresarioVotes:
-                this.props.empresarioVotes();
+            case 'empresarioVotes':
+                this.setState({
+                    playerEliminated: this.state.characters[4]
+                });    
                 break;
-            case medicoVotes:
-                this.props.medicoVotes();
+            case 'medicoVotes':
+                this.setState({
+                    playerEliminated: this.state.characters[5]
+                });
                 break;
         }
-        if (this.props.players.prefeitoVotes > this.props.players.medicoVotes &&
-            this.props.players.prefeitoVotes > this.props.players.advogadoVotes &&
-            this.props.players.prefeitoVotes > this.props.players.empresarioVotes &&
-            this.props.players.prefeitoVotes > this.props.players.professorVotes) {
-            this.setState({
-                playerEliminated: this.state.characters[2]
-            });
-        } else if (this.props.players.medicoVotes > this.props.players.professorVotes &&
-            this.props.players.medicoVotes > this.props.players.advogadoVotes &&
-            this.props.players.medicoVotes > this.props.players.empresarioVotes &&
-            this.props.players.medicoVotes > this.props.players.prefeitoVotes) {
-            this.setState({
-                playerEliminated: this.state.characters[4]
-            });
-        } else if (this.props.players.empresarioVotes > this.props.players.professorVotes &&
-            this.props.players.empresarioVotes > this.props.players.advogadoVotes &&
-            this.props.players.empresarioVotes > this.props.players.medicoVotes &&
-            this.props.players.empresarioVotes > this.props.players.prefeitoVotes) {
-            this.setState({
-                playerEliminated: this.state.characters[3]
-            });
-        } else if (this.props.players.professorVotes > this.props.players.empresarioVotes &&
-            this.props.players.professorVotes > this.props.players.advogadoVotes &&
-            this.props.players.professorVotes > this.props.players.medicoVotes &&
-            this.props.players.professorVotes > this.props.players.prefeitoVotes) {
-            this.setState({
-                playerEliminated: this.state.characters[0]
-            });
-        } else {
-            //advogado
-            this.setState({
-                playerEliminated: this.state.characters[1]
-            });
-        }
-
     }
 
     state = {
@@ -89,7 +67,7 @@ class Result extends Component {
             },
             {
                 "id": 2,
-                "name": "Advogado",
+                "name": "Advogada",
                 "image": require('../img/advogado.png')
             },
             {
@@ -104,7 +82,7 @@ class Result extends Component {
             },
             {
                 "id": 5,
-                "name": "Médico",
+                "name": "Médica",
                 "image": require('../img/medico.png')
             }
         ],
@@ -117,7 +95,7 @@ class Result extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.textResult}>
-                    Resultado do julgamento foi que o
+                    Resultado do julgamento foi que o(a)
                 </Text>
                 <View style={styles.item}>
                     <Image
@@ -129,7 +107,7 @@ class Result extends Component {
                     </Text>
                 </View>
                 <Text style={styles.textResult}>
-                    é acusado de corrupção!
+                    é acusado(a) de corrupção!
                 </Text>
                 <View style={styles.buttonView}>
                     <TouchableOpacity
