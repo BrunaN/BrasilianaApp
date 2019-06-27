@@ -106,6 +106,7 @@ class Characters extends Component {
                         onPress={() => {
                             navigate('Voting', { characters: this.state.characters })
                             this.props.counterPlayers(this.state.characters.length);
+                            this.props.faultVotes(this.state.characters.length);
                             console.log(this.props)
                         }
                         }

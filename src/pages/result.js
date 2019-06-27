@@ -141,7 +141,9 @@ class Result extends Component {
                     <View style={styles.buttonView}>
                         <TouchableOpacity
                             onPress={() => {
-                                navigate('Draw', { characters: this.state.draw })
+                                navigate('Draw', { characters: this.state.draw });
+                                this.props.clean();
+                                this.props.faultVotes(this.props.players.playersTotal);
                             }
                             }
                             color="transparent"
@@ -171,7 +173,6 @@ class Result extends Component {
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('Main');
-                                this.props.counterPlayers(this.props.players.playersP);
                             }}
                             color="transparent"
                             style={styles.button}>

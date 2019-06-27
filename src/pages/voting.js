@@ -102,6 +102,8 @@ class Voting extends Component {
                 <Text style={styles.textSelect}>
                     Acuse o corrupto!
                     {this.props.players.playersTotal}
+                    {this.props.players.playersP}
+                    oi
                     {this.props.players.professorVotes}
                     {this.props.players.advogadoVotes}
                     {this.props.players.medicoVotes}

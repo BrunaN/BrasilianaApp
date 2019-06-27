@@ -16,8 +16,6 @@ class Draw extends Component {
     };
 
     componentDidMount() {
-        this.props.counterPlayers(this.props.players.playersP);
-        console.log(this.props);
         let x = [];
         for (let i = 0; i < this.props.navigation.state.params.characters.length; i++) {
             for (let j = 0; j < this.state.characters.length; j++) {

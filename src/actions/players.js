@@ -41,3 +41,9 @@ export function clean(){
         type: 'CLEAN'
     }
 }
+export function faultVotes(length){
+    return{
+        type: 'FAULT',
+        length,
+    }
+}

@@ -1,5 +1,4 @@
 export default function players(state = {
-    playersP: 0,
     advogadoVotes: 0,
     medicoVotes: 0,
     empresarioVotes: 0,
@@ -10,13 +9,12 @@ export default function players(state = {
         case 'COUNTER_PLAYERS':
             return {
                 playersTotal: action.length,
-                playersP: action.length,
                 ...state,
             };
         case 'DECREMENT':
             return {
                 ...state,
-                playersTotal: state.playersTotal - 1,
+                playersP: state.playersP - 1,
             };
         case 'CLEAN':
             return {
@@ -25,7 +23,12 @@ export default function players(state = {
                 medicoVotes: 0,
                 empresarioVotes: 0,
                 professorVotes: 0,
-                prefeitoVotes: 0,
+                prefeitoVotes: 0
+            }
+        case 'FAULT':
+            return {
+                ...state,
+                playersP: action.length,
             }
         case 'ADVOGADO_VOTES':
             return {

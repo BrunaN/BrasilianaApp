@@ -26,7 +26,7 @@ class SucessVoting extends Component {
                 <View style={styles.buttonView}>
                     <TouchableOpacity
                         onPress={() => {
-                            if (this.props.players.playersTotal == 0) {
+                            if (this.props.players.playersP == 0) {
                                 navigate('Result')
                             }else{
                                 navigate('Voting')
