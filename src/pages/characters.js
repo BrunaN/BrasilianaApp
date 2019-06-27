@@ -15,6 +15,10 @@ class Characters extends Component {
         header: null,
     };
 
+    componentDidMount() {
+        this.props.clean();
+    }
+
     state = {
         players: [
             {

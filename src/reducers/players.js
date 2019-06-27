@@ -1,4 +1,5 @@
 export default function players(state = {
+    playersP: 0,
     advogadoVotes: 0,
     medicoVotes: 0,
     empresarioVotes: 0,
@@ -17,6 +18,15 @@ export default function players(state = {
                 ...state,
                 playersTotal: state.playersTotal - 1,
             };
+        case 'CLEAN':
+            return {
+                ...state,
+                advogadoVotes: 0,
+                medicoVotes: 0,
+                empresarioVotes: 0,
+                professorVotes: 0,
+                prefeitoVotes: 0,
+            }
         case 'ADVOGADO_VOTES':
             return {
                 ...state,

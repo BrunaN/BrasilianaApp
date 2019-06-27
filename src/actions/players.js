@@ -36,3 +36,8 @@ export function advogadoVotes(){
         type: 'ADVOGADO_VOTES'
     }
 }
+export function clean(){
+    return{
+        type: 'CLEAN'
+    }
+}
