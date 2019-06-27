@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     itemText: {
         color: '#272A2D',
         padding: 10,
-        fontSize: 20,
+        fontSize: 19,
         fontWeight: 'bold',
         textAlign: 'left'
     },

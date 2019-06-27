@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
@@ -56,14 +56,14 @@ class Characters extends Component {
     }
 
     renderItem = ({ item }) => (
-        <View style={
-            this.state.players[item.id-1].active ? styles.containerActive : styles.containerItem}>
+        <View style={item.active? styles.containerItemActive : styles.containerItem}>
             <TouchableOpacity
                 onPress={() => {
+
                     item.active = true;
-                    this.state.players[item.id-1].active = true;
-                    console.log('oi', this.state.players[item.id-1].active)
+                    this.state.players[item.id - 1].active = true;
                     this.forceUpdate()
+
                     let x = this.state.characters;
                     if (x.length > 0) {
                         for (let i = 0; i < x.length; i++) {
@@ -73,6 +73,7 @@ class Characters extends Component {
                             }
                         }
                     }
+
                     x.push(item.id)
                     this.props.counterPlayers();
                     this.setState({ characters: x })
@@ -100,6 +101,7 @@ class Characters extends Component {
                     numColumns={2}
                     columnWrapperStyle={styles.list}
                     data={this.state.players}
+                    extraData={this.state}
                     keyExtractor={player => player.id}
                     renderItem={this.renderItem}
                 />
@@ -153,16 +155,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#FDFBE0',
         borderRadius: 6
     },
-    containerActive: {
-        width: 150,
+    containerItemActive: {
+        width: 152,
         margin: 15,
-        backgroundColor: '#333333',
+        backgroundColor: '#FDFBE0',
+        shadowColor: '#6B557C',
+        shadowOffset: { width: 160, height: 200 },
+        shadowRadius: 1,
+        elevation: 10,
+        shadowOpacity: 0.9,
+        borderWidth: 1,
+        borderColor: '#6B557C',
         borderRadius: 6
     },
     itemText: {
         color: '#272A2D',
         padding: 10,
-        fontSize: 20,
+        fontSize: 19,
         fontWeight: 'bold',
         textAlign: 'left'
     },
@@ -185,7 +194,7 @@ const styles = StyleSheet.create({
     button: {
         width: 150,
         textAlign: 'center',
-        margin: 15,
+        margin: 10,
         borderWidth: 1,
         borderColor: '#FDFBE0',
         borderRadius: 2
