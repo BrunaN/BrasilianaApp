@@ -34,27 +34,27 @@ class Voting extends Component {
             {
                 "id": 1,
                 "name": "Professor",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/professor.png')
             },
             {
                 "id": 2,
                 "name": "Advogado",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/advogado.png')
             },
             {
                 "id": 3,
                 "name": "Prefeito",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/prefeito.png')
             },
             {
                 "id": 4,
                 "name": "Empresário",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/empresario.png')
             },
             {
                 "id": 5,
                 "name": "Médico",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/medico.png')
             }
         ],
         players: []
@@ -101,6 +101,12 @@ class Voting extends Component {
             <View style={styles.container}>
                 <Text style={styles.textSelect}>
                     Acuse o corrupto!
+                    {this.props.players.playersTotal}
+                    {this.props.players.professorVotes}
+                    {this.props.players.advogadoVotes}
+                    {this.props.players.medicoVotes}
+                    {this.props.players.prefeitoVotes}
+                    {this.props.players.empresarioVotes}
                 </Text>
                 <FlatList
                     numColumns={2}
@@ -141,11 +147,9 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     containerItem: {
-        flex: 1 / 2,
+        width: 150,
         margin: 15,
         backgroundColor: '#FDFBE0',
-        borderWidth: 1,
-        borderColor: '#FDFBE0',
         borderRadius: 6
     },
     itemText: {
@@ -156,8 +160,10 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
     itemImage: {
-        height: 90,
-        width: 100
+        height: 100,
+        width: 150,
+        borderTopLeftRadius: 6,
+        borderTopRightRadius: 6,
     },
     text: {
         fontSize: 20,

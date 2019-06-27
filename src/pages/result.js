@@ -15,6 +15,34 @@ class Result extends Component {
     }
 
     componentDidMount() {
+        let votes = 0;
+        let player;
+        for (let key in this.props.players) {
+            console.log(key + " -> " + this.props.players[key]);
+            // console.log(Math.max(this.props.players[key]))
+            if(this.props.players[key] > votes){
+                votes = this.props.players[key];
+                console.log(key)
+                player=key;
+            }
+        }
+        switch (key) {
+            case professorVotes:
+                this.props.professorVotes();
+                break;
+            case advogadoVotes:
+                this.props.advogadoVotes();
+                break;
+            case prefeitoVotes:
+                this.props.prefeitoVotes();
+                break;
+            case empresarioVotes:
+                this.props.empresarioVotes();
+                break;
+            case medicoVotes:
+                this.props.medicoVotes();
+                break;
+        }
         if (this.props.players.prefeitoVotes > this.props.players.medicoVotes &&
             this.props.players.prefeitoVotes > this.props.players.advogadoVotes &&
             this.props.players.prefeitoVotes > this.props.players.empresarioVotes &&
@@ -57,32 +85,31 @@ class Result extends Component {
             {
                 "id": 1,
                 "name": "Professor",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/professor.png')
             },
             {
                 "id": 2,
                 "name": "Advogado",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/advogado.png')
             },
             {
                 "id": 3,
                 "name": "Prefeito",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/prefeito.png')
             },
             {
                 "id": 4,
                 "name": "Empresário",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/empresario.png')
             },
             {
                 "id": 5,
                 "name": "Médico",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/medico.png')
             }
         ],
-        playerEliminated: {
-
-        }
+        playerEliminated: {},
+        draw: [],
     }
 
     render() {
@@ -102,7 +129,7 @@ class Result extends Component {
                     </Text>
                 </View>
                 <Text style={styles.textResult}>
-                    é o corrupto!
+                    é acusado de corrupção!
                 </Text>
                 <View style={styles.buttonView}>
                     <TouchableOpacity
@@ -112,7 +139,7 @@ class Result extends Component {
                         }
                         color="transparent"
                         style={styles.button}>
-                        <Text style={styles.text}>FINALIZAR PARTIDA</Text>
+                        <Text style={styles.text}>FINALIZAR O JULGAMENTO</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -148,6 +175,10 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     item: {
+        width: 200,
+        margin: 15,
+        backgroundColor: '#FDFBE0',
+        borderRadius: 6
     },
     itemText: {
         color: '#272A2D',
@@ -157,10 +188,11 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
     itemImage: {
-        height: 110,
-        width: 110
+        height: 150,
+        width: 200,
+        borderTopLeftRadius: 6,
+        borderTopRightRadius: 6,
     },
-
     text: {
         fontSize: 20,
         fontWeight: 'bold',

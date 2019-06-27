@@ -15,9 +15,7 @@ class SucessVoting extends Component {
     }
 
     componentDidMount() {
-        if (this.props.players.playersTotal == 0) {
-            this.props.navigation.navigate('Result')
-        }
+        
     }
 
     render() {
@@ -27,7 +25,13 @@ class SucessVoting extends Component {
                 <Text style={styles.textConfirm}>Voto confirmado!</Text>
                 <View style={styles.buttonView}>
                     <TouchableOpacity
-                        onPress={() => navigate('Voting')}
+                        onPress={() => {
+                            if (this.props.players.playersTotal == 0) {
+                                navigate('Result')
+                            }else{
+                                navigate('Voting')
+                            }
+                        }}
                         color="transparent"
                         style={styles.button}>
                         <Text style={styles.text}>CONTINUAR A VOTAÇÃO</Text>

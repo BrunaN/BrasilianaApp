@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
@@ -20,37 +20,54 @@ class Characters extends Component {
             {
                 "id": 1,
                 "name": "Professor",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/professor.png'),
+                "active": false
             },
             {
                 "id": 2,
                 "name": "Advogado",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/advogado.png'),
+                "active": false
             },
             {
                 "id": 3,
                 "name": "Prefeito",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/prefeito.png'),
+                "active": false
             },
             {
                 "id": 4,
                 "name": "Empresário",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/empresario.png'),
+                "active": false
             },
             {
                 "id": 5,
                 "name": "Médico",
-                "image": require('../img/dinheiro.png')
+                "image": require('../img/medico.png'),
+                "active": false
             }
         ],
         characters: []
     }
 
     renderItem = ({ item }) => (
-        <View style={styles.containerItem}>
+        <View style={
+            this.state.players[item.id-1].active ? styles.containerActive : styles.containerItem}>
             <TouchableOpacity
                 onPress={() => {
+                    item.active = true;
+                    this.state.players[item.id-1].active = true;
+                    console.log('oi', this.state.players[item.id-1].active)
+                    this.forceUpdate()
                     let x = this.state.characters;
+                    if (x.length > 0) {
+                        for (let i = 0; i < x.length; i++) {
+                            if (x[i] == item.id) {
+                                x.splice(i, 1)
+                            }
+                        }
+                    }
                     x.push(item.id)
                     this.setState({ characters: x })
                 }
@@ -124,11 +141,15 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     containerItem: {
-        flex: 1 / 2,
+        width: 150,
         margin: 15,
         backgroundColor: '#FDFBE0',
-        borderWidth: 1,
-        borderColor: '#FDFBE0',
+        borderRadius: 6
+    },
+    containerActive: {
+        width: 150,
+        margin: 15,
+        backgroundColor: '#333333',
         borderRadius: 6
     },
     itemText: {
@@ -139,8 +160,10 @@ const styles = StyleSheet.create({
         textAlign: 'left'
     },
     itemImage: {
-        height: 90,
-        width: 100
+        height: 100,
+        width: 150,
+        borderTopLeftRadius: 6,
+        borderTopRightRadius: 6,
     },
     text: {
         fontSize: 20,
