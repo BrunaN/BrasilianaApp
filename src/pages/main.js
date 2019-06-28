@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 
 export default class Main extends Component {
     static navigationOptions = {
@@ -12,6 +12,10 @@ export default class Main extends Component {
             <ImageBackground source={require('../img/backgroundImage.png')} style={{ width: '100%', height: '100%' }}>
                 <View style={styles.container}>
                     <Text style={styles.welcome}>Chegou a hora do jugalmento!</Text>
+                    <Image
+                        style={styles.image}
+                        source={require('../img/megafone.png')}
+                    />
                     <Text style={styles.text}>Descubra quem é o corrupto!</Text>
                     <View style={styles.buttonView}>
                         <TouchableOpacity
@@ -47,6 +51,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#ffff',
+    },
+    image: {
+        width: 150,
+        height: 150
     },
     textButton: {
         fontSize: 22,

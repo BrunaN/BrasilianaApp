@@ -136,6 +136,10 @@ class Result extends Component {
                     <Text style={styles.textResult}>
                         Houve um empate!
                     </Text>
+                    <Image
+                        style={styles.image}
+                        source={require('../img/megafone.png')}
+                    />
                     <Text style={styles.textResult}>
                         Chegou a hora de ver os mais votados!
                     </Text>
@@ -210,6 +214,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 10,
         color: '#ffff',
+    },
+    image: {
+        width: 150,
+        height: 150
     },
     buttonView: {
         margin: 20,
