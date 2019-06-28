@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
         borderRadius: 6
     },
     containerItemActive: {
-        width: 152,
+        width: 154,
         margin: 15,
         backgroundColor: '#FDFBE0',
         shadowColor: '#6B557C',
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1,
         elevation: 10,
         shadowOpacity: 0.9,
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#6B557C',
         borderRadius: 6
     },

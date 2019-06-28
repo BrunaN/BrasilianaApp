@@ -103,7 +103,7 @@ class Draw extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.textSelect}>
-                    Selecione quem deve ser o eliminado
+                    Selecione quem deve ser eliminado
                 </Text>
                 <Text style={styles.textSelect}>
                     ACUSEM O CORRUPTO!!
