@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters snapshop 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#48B091",
+      "flex": 1,
+      "padding": 15,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#ffff",
+        "fontSize": 22,
+        "fontWeight": "bold",
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    Selecione os participantes da partida
+  </Text>
+  <RCTScrollView
+    columnWrapperStyle={
+      Object {
+        "flex": 1,
+        "justifyContent": "space-between",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "active": false,
+          "id": 1,
+          "image": Object {
+            "testUri": "../../../src/img/professor.png",
+          },
+          "name": "Professor",
+        },
+        Object {
+          "active": false,
+          "id": 2,
+          "image": Object {
+            "testUri": "../../../src/img/advogado.png",
+          },
+          "name": "Advogada",
+        },
+        Object {
+          "active": false,
+          "id": 3,
+          "image": Object {
+            "testUri": "../../../src/img/prefeito.png",
+          },
+          "name": "Prefeito",
+        },
+        Object {
+          "active": false,
+          "id": 4,
+          "image": Object {
+            "testUri": "../../../src/img/empresario.png",
+          },
+          "name": "Empresário",
+        },
+        Object {
+          "active": false,
+          "id": 5,
+          "image": Object {
+            "testUri": "../../../src/img/medico.png",
+          },
+          "name": "Médica",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    extraData={
+      Object {
+        "characters": Array [],
+        "players": Array [
+          Object {
+            "active": false,
+            "id": 1,
+            "image": Object {
+              "testUri": "../../../src/img/professor.png",
+            },
+            "name": "Professor",
+          },
+          Object {
+            "active": false,
+            "id": 2,
+            "image": Object {
+              "testUri": "../../../src/img/advogado.png",
+            },
+            "name": "Advogada",
+          },
+          Object {
+            "active": false,
+            "id": 3,
+            "image": Object {
+              "testUri": "../../../src/img/prefeito.png",
+            },
+            "name": "Prefeito",
+          },
+          Object {
+            "active": false,
+            "id": 4,
+            "image": Object {
+              "testUri": "../../../src/img/empresario.png",
+            },
+            "name": "Empresário",
+          },
+          Object {
+            "active": false,
+            "id": 5,
+            "image": Object {
+              "testUri": "../../../src/img/medico.png",
+            },
+            "name": "Médica",
+          },
+        ],
+      }
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              Object {
+                "flex": 1,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FDFBE0",
+                "borderRadius": 6,
+                "margin": 15,
+                "width": 150,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID="select"
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../src/img/professor.png",
+                  }
+                }
+                style={
+                  Object {
+                    "borderTopLeftRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "height": 100,
+                    "width": 150,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#272A2D",
+                    "fontSize": 19,
+                    "fontWeight": "bold",
+                    "padding": 10,
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Professor
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FDFBE0",
+                "borderRadius": 6,
+                "margin": 15,
+                "width": 150,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID="select"
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../src/img/advogado.png",
+                  }
+                }
+                style={
+                  Object {
+                    "borderTopLeftRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "height": 100,
+                    "width": 150,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#272A2D",
+                    "fontSize": 19,
+                    "fontWeight": "bold",
+                    "padding": 10,
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Advogada
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              Object {
+                "flex": 1,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FDFBE0",
+                "borderRadius": 6,
+                "margin": 15,
+                "width": 150,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID="select"
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../src/img/prefeito.png",
+                  }
+                }
+                style={
+                  Object {
+                    "borderTopLeftRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "height": 100,
+                    "width": 150,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#272A2D",
+                    "fontSize": 19,
+                    "fontWeight": "bold",
+                    "padding": 10,
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Prefeito
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FDFBE0",
+                "borderRadius": 6,
+                "margin": 15,
+                "width": 150,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID="select"
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../src/img/empresario.png",
+                  }
+                }
+                style={
+                  Object {
+                    "borderTopLeftRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "height": 100,
+                    "width": 150,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#272A2D",
+                    "fontSize": 19,
+                    "fontWeight": "bold",
+                    "padding": 10,
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Empresário
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+              },
+              Object {
+                "flex": 1,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#FDFBE0",
+                "borderRadius": 6,
+                "margin": 15,
+                "width": 150,
+              }
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID="select"
+            >
+              <Image
+                source={
+                  Object {
+                    "testUri": "../../../src/img/medico.png",
+                  }
+                }
+                style={
+                  Object {
+                    "borderTopLeftRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "height": 100,
+                    "width": 150,
+                  }
+                }
+              />
+              <Text
+                style={
+                  Object {
+                    "color": "#272A2D",
+                    "fontSize": 19,
+                    "fontWeight": "bold",
+                    "padding": 10,
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Médica
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#FDFBE0",
+          "borderRadius": 2,
+          "borderWidth": 2,
+          "marginBottom": 15,
+          "opacity": 1,
+          "textAlign": "center",
+          "width": 130,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ffff",
+            "fontSize": 20,
+            "fontWeight": "bold",
+            "margin": 10,
+            "textAlign": "center",
+          }
+        }
+      >
+        COMFIRMAR
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -73,17 +73,17 @@ class Result extends Component {
                     break;
                 case 'prefeitoVotes':
                     this.setState({
-                        playerEliminated: this.state.characters[3]
+                        playerEliminated: this.state.characters[2]
                     });
                     break;
                 case 'empresarioVotes':
                     this.setState({
-                        playerEliminated: this.state.characters[4]
+                        playerEliminated: this.state.characters[3]
                     });
                     break;
                 case 'medicoVotes':
                     this.setState({
-                        playerEliminated: this.state.characters[5]
+                        playerEliminated: this.state.characters[4]
                     });
                     break;
             }
