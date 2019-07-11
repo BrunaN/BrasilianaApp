@@ -186,7 +186,6 @@ exports[`Characters snapshop 1`] = `
                   "opacity": 1,
                 }
               }
-              testID="select"
             >
               <Image
                 source={
@@ -242,7 +241,6 @@ exports[`Characters snapshop 1`] = `
                   "opacity": 1,
                 }
               }
-              testID="select"
             >
               <Image
                 source={
@@ -317,7 +315,6 @@ exports[`Characters snapshop 1`] = `
                   "opacity": 1,
                 }
               }
-              testID="select"
             >
               <Image
                 source={
@@ -373,7 +370,6 @@ exports[`Characters snapshop 1`] = `
                   "opacity": 1,
                 }
               }
-              testID="select"
             >
               <Image
                 source={
@@ -448,7 +444,6 @@ exports[`Characters snapshop 1`] = `
                   "opacity": 1,
                 }
               }
-              testID="select"
             >
               <Image
                 source={
