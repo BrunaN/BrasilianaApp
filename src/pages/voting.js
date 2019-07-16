@@ -65,7 +65,7 @@ class Voting extends Component {
     renderItem = ({ item }) => (
         <View style={styles.containerItem}>
             <TouchableOpacity
-                ref={this.props.generateTestHook('Voting.${item.name}')}
+                ref={this.props.generateTestHook(`Voting.${item.name}`)}
                 onPress={() => {
                     this.props.navigation.navigate('SucessVoting', { id: item.id })
                     this.props.decrementing();

@@ -61,7 +61,7 @@ class Characters extends Component {
     renderItem = ({ item }) => (
         <View style={item.active ? styles.containerItemActive : styles.containerItem}>
             <TouchableOpacity
-                ref={this.props.generateTestHook('Characters.${item.name}')}
+                ref={this.props.generateTestHook(`Characters.${item.name}`)}
                 onPress={() => {
 
                     item.active = true;
