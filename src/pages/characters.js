@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Image, Button, View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
 import { connect } from 'react-redux';
+
+import { hook } from 'cavy';
 
 class Characters extends Component {
 
@@ -59,6 +61,7 @@ class Characters extends Component {
     renderItem = ({ item }) => (
         <View style={item.active ? styles.containerItemActive : styles.containerItem}>
             <TouchableOpacity
+                ref={this.props.generateTestHook('Characters.Button')}
                 onPress={() => {
 
                     item.active = true;
@@ -128,7 +131,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators(playersActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Characters)
+export default connect(mapStateToProps, mapDispatchToProps)(hook(Characters));
 
 const styles = StyleSheet.create({
     container: {
