@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
 import { connect } from 'react-redux';
 
+import { hook } from 'cavy';
+
 class Voting extends Component {
 
     constructor(props) {
@@ -63,6 +65,7 @@ class Voting extends Component {
     renderItem = ({ item }) => (
         <View style={styles.containerItem}>
             <TouchableOpacity
+                ref={this.props.generateTestHook('Voting.${item.name}')}
                 onPress={() => {
                     this.props.navigation.navigate('SucessVoting', { id: item.id })
                     this.props.decrementing();
@@ -121,7 +124,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators(playersActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Voting)
+const TestableVoting = hook(Voting);
+export default connect(mapStateToProps, mapDispatchToProps)(TestableVoting)
 
 const styles = StyleSheet.create({
     container: {

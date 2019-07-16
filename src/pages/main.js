@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 
-export default class Main extends Component {
+import { hook } from 'cavy';
+
+class Main extends Component {
     static navigationOptions = {
         header: null,
     };
@@ -19,6 +21,7 @@ export default class Main extends Component {
                     <Text style={styles.text}>Descubra quem é o corrupto!</Text>
                     <View style={styles.buttonView}>
                         <TouchableOpacity
+                            ref={this.props.generateTestHook('Main.Button')}
                             onPress={() => navigate('Characters')}
                             color="transparent"
                             style={styles.button}>
@@ -32,6 +35,8 @@ export default class Main extends Component {
         );
     }
 }
+
+export default hook(Main)
 
 const styles = StyleSheet.create({
     container: {

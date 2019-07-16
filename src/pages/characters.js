@@ -61,7 +61,7 @@ class Characters extends Component {
     renderItem = ({ item }) => (
         <View style={item.active ? styles.containerItemActive : styles.containerItem}>
             <TouchableOpacity
-                ref={this.props.generateTestHook('Characters.Button')}
+                ref={this.props.generateTestHook('Characters.${item.name}')}
                 onPress={() => {
 
                     item.active = true;
@@ -110,6 +110,7 @@ class Characters extends Component {
                 />
                 <View style={styles.buttonView}>
                     <TouchableOpacity
+                        ref={this.props.generateTestHook('Characters.ButtonConfirm')}
                         onPress={() => {
                             navigate('Voting', { characters: this.state.characters })
                             this.props.faultVotes(this.state.characters.length);
@@ -131,7 +132,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators(playersActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(hook(Characters));
+const TestableCharacters = hook(Characters);
+export default connect(mapStateToProps, mapDispatchToProps)(TestableCharacters);
 
 const styles = StyleSheet.create({
     container: {
