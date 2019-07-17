@@ -75,6 +75,15 @@ export default function (spec) {
             await spec.press('Voting.Médica');
             await spec.press('SucessVoting.Button');
             await spec.press('Result.ButtonDesempate');
+            await spec.exists('Draw.View');
+            await spec.exists('Draw.Médica');
+            await spec.exists('Draw.Advogada');
+            await spec.press('Draw.Médica');
+            await spec.press('SucessVoting.Button');
+            await spec.press('Draw.Médica');
+            await spec.press('SucessVoting.Button');
+            await spec.notExists('Result.ButtonDesempate');
+            await spec.exists('Result.Finalizar');
         });
     });
 
