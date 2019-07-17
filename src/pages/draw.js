@@ -104,8 +104,8 @@ class Draw extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                ref={this.props.generateTestHook('Draw.View')}
+            <View style={styles.container}
+                ref={this.props.generateTestHook('Draw.View')}>
                 <Text style={styles.textSelect}>
                     Selecione quem deve ser eliminado
                 </Text>
