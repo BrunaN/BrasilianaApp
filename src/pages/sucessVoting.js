@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
 import { connect } from 'react-redux';
 
+import { hook } from 'cavy';
+
 class SucessVoting extends Component {
     static navigationOptions = {
         header: null,
@@ -15,7 +17,7 @@ class SucessVoting extends Component {
     }
 
     componentDidMount() {
-        
+
     }
 
     render() {
@@ -25,10 +27,11 @@ class SucessVoting extends Component {
                 <Text style={styles.textConfirm}>Voto confirmado!</Text>
                 <View style={styles.buttonView}>
                     <TouchableOpacity
+                        ref={this.props.generateTestHook('SucessVoting.Button')}
                         onPress={() => {
                             if (this.props.players.playersP == 0) {
                                 navigate('Result')
-                            }else{
+                            } else {
                                 navigate('Voting')
                             }
                         }}
@@ -49,7 +52,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators(playersActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(SucessVoting)
+const TestableSucessVoting = hook(SucessVoting);
+export default connect(mapStateToProps, mapDispatchToProps)(TestableSucessVoting)
 
 const styles = StyleSheet.create({
     container: {

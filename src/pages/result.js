@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as playersActions from '../actions/players';
 import { connect } from 'react-redux';
 
+import { hook } from 'cavy';
+
 class Result extends Component {
     static navigationOptions = {
         header: null,
@@ -133,7 +135,8 @@ class Result extends Component {
                         barStyle="light-content"
                         backgroundColor="#E23A33"
                     />
-                    <Text style={styles.textResult}>
+                    <Text style={styles.textResult}
+                        ref={this.props.generateTestHook('Result.TextEmpate')}>
                         Houve um empate!
                     </Text>
                     <Image
@@ -145,6 +148,7 @@ class Result extends Component {
                     </Text>
                     <View style={styles.buttonView}>
                         <TouchableOpacity
+                            ref={this.props.generateTestHook('Result.ButtonDesempate')}
                             onPress={() => {
                                 navigate('Draw', { characters: this.state.draw });
                                 this.props.faultVotes(this.props.players.playersTotal);
@@ -165,7 +169,8 @@ class Result extends Component {
                     <Text style={styles.textResult}>
                         Resultado do julgamento foi que o(a)
                     </Text>
-                    <View style={styles.item}>
+                    <View style={styles.item}
+                        ref={this.props.generateTestHook(`Result.${this.state.playerEliminated.name}`)}>
                         <Image
                             style={styles.itemImage}
                             source={this.state.playerEliminated.image}
@@ -179,6 +184,7 @@ class Result extends Component {
                     </Text>
                     <View style={styles.buttonView}>
                         <TouchableOpacity
+                            ref={this.props.generateTestHook('Result.Finalizar')}
                             onPress={() => {
                                 navigate('Main');
                             }}
@@ -199,7 +205,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
     bindActionCreators(playersActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Result)
+const TestableResult = hook(Result);
+export default connect(mapStateToProps, mapDispatchToProps)(TestableResult)
 
 const styles = StyleSheet.create({
     container: {
