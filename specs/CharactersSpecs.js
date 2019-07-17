@@ -37,7 +37,7 @@ export default function (spec) {
 
     spec.describe('Realizando empate', function () {
         spec.it('Verificando a existência do personagem médica, empresario, prefeito e advogada, selecionando-os para a partida ' + 
-        'votando duas vezes no advogada e na médica, verificando se houve o empate', async function () {
+        'votando duas vezes na advogada e na médica, verificando se houve o empate', async function () {
             await spec.press('Main.Button');
             await spec.exists('Characters.Advogada');
             await spec.press('Characters.Advogada');
@@ -51,14 +51,30 @@ export default function (spec) {
             await spec.press('Characters.ButtonConfirm');
             await spec.press('Voting.Advogada');
             await spec.press('SucessVoting.Button');
-            await spec.press('Voting.Medica');
+            await spec.press('Voting.Médica');
             await spec.press('SucessVoting.Button');
-            await spec.press('Voting.Medica');
+            await spec.press('Voting.Médica');
             await spec.press('SucessVoting.Button');
             await spec.press('Voting.Advogada');
             await spec.press('SucessVoting.Button');
             await spec.exists('Result.TextEmpate');
             await spec.exists('Result.ButtonDesempate');
+        });
+    });
+
+    spec.describe('Realizando um desempate', function () {
+        spec.it('Selecionando as personagens advogada e médica para a partida ' + 
+        'votando na advogada e na médica, verificando se houve o empate, votando na médica duas vezes, verificando o resultado', async function () {
+            await spec.press('Main.Button');
+            await spec.press('Characters.Advogada');
+            await spec.press('Characters.Médica');
+            await spec.exists('Characters.ButtonConfirm');
+            await spec.press('Characters.ButtonConfirm');
+            await spec.press('Voting.Advogada');
+            await spec.press('SucessVoting.Button');
+            await spec.press('Voting.Médica');
+            await spec.press('SucessVoting.Button');
+            await spec.press('Result.ButtonDesempate');
         });
     });
 
