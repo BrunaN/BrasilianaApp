@@ -1,4 +1,4 @@
-# Brasilina
+# Brasiliana
 Aplicativo para o jogo de tabuleiro Brasiliana.
 
 ## Tecnologias
