@@ -39,4 +39,4 @@ npm test Reducers-test
 
 ### Para rodar os testes do Cavy
 
-Na Branch `test`, selecione o modo `Remote JS Debugging` no device que utiliza para iniciar o app e acompanhe os testes pela aba do navegador.
+Na Branch `test`, selecione o modo `Remote JS Debugging` (acessando o menu do desenvolvedor agitando o seu dispositivo ou selecionando "Shake Gesture" no menu Hardware no iOS Simulator) e acompanhe os testes pela aba do navegador.
