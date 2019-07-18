@@ -11,8 +11,3 @@ test('Characters snapshop', () => {
     ).toJSON();
     expect(snap).toMatchSnapshot();
 })
-
-//-- -u (após alteração em algo do component)
-// npm test nome-do-arquivo
-// snapshot e reducers apenas :c
-//comentar o navigate
