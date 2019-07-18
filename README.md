@@ -1,8 +1,11 @@
 # Brasiliana
 Aplicativo para o jogo de tabuleiro Brasiliana.
 
-## Tecnologias
-React Native, Redux, Jest e Cavy.
+## Dependências
+[React Native] 
+[Redux]
+[Jest]
+[Cavy]
 
 ## Para rodar os testes unitários
 
