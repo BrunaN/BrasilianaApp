@@ -3,13 +3,10 @@ Aplicativo para o jogo de tabuleiro Brasiliana.
 
 ## Dependências
 
-[React Native](https://facebook.github.io/react-native/)
-
-[Redux](https://redux.js.org/)
-
-[Jest](https://jestjs.io/)
-
-[Cavy](https://github.com/pixielabs/cavy)
+- [React Native](https://facebook.github.io/react-native/)
+- [Redux](https://redux.js.org/)
+- [Jest](https://jestjs.io/)
+- [Cavy](https://github.com/pixielabs/cavy)
 
 ## Build Projeto
 
