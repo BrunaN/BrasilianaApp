@@ -27,7 +27,9 @@ iOS:
 react-native run-ios
 ```
 
-## Para rodar os testes unitários
+## Testes
+
+### Para rodar os testes unitários
 
 Na Branch `test`, execute:
 
@@ -35,6 +37,6 @@ Na Branch `test`, execute:
 npm test Reducers-test 
 ```
 
-## Para rodar os testes do Cavy
+### Para rodar os testes do Cavy
 
 Na Branch `test`, selecione o modo `Remote JS Debugging` no device que utiliza para iniciar o app e acompanhe os testes pela aba do navegador.
