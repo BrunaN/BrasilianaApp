@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Image, View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { bindActionCreators } from 'redux';
@@ -14,7 +15,7 @@ class Characters extends Component {
     }
 
     static navigationOptions = {
-        header: null,
+        header: null
     };
 
     componentDidMount() {

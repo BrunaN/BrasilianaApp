@@ -25,10 +25,12 @@ export default function (spec) {
             await spec.exists('Voting.Professor');
             await spec.press('Voting.Professor');
             await spec.exists('Voting.Advogada');
+            await spec.pause(2000);
             await spec.exists('SucessVoting.Button');
             await spec.press('SucessVoting.Button');
             await spec.exists('Voting.Professor');
             await spec.press('Voting.Professor');
+            await spec.pause(2000);
             await spec.press('SucessVoting.Button');
             await spec.pause(1000);
             await spec.exists('Result.Professor');
